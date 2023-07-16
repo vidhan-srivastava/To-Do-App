@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:note_taking_app/widgets.dart';
-
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -9,7 +8,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  var text = TextEditingController();
+  var searchNote = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +17,7 @@ class _HomeState extends State<Home> {
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         elevation: 0,
         title: const Text(
-          'Notes',
+          'N o t e s',
           style: TextStyle(
             color: Color.fromARGB(255, 245, 204, 57),
             fontSize: 32,
@@ -60,7 +59,7 @@ class _HomeState extends State<Home> {
                 child: ListView.separated(
                   scrollDirection: Axis.vertical,
                     itemBuilder: (context, index) {
-                      return const ToDo(titleText: 'Vidhan', subtitleText: 'bTech');
+                      return const ToDo(titleText: 'Vidhan', subtitleText: 'AppDeveloper');
                     },
                     separatorBuilder: (context, index) {
                       return const Divider(
@@ -68,7 +67,7 @@ class _HomeState extends State<Home> {
                       color: Color.fromARGB(255, 165, 162, 162),
                       thickness: 1,);
                     },
-                    itemCount: 10,
+                    itemCount: 4,
                     ),
                   ),
 
@@ -117,7 +116,7 @@ class _HomeState extends State<Home> {
           fontSize: 22,
           fontWeight: FontWeight.w600,
         ),
-        controller: text,
+        controller: searchNote,
         decoration: InputDecoration(
           prefixIcon: const Icon(
             Icons.search,
